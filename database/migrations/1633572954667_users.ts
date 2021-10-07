@@ -7,7 +7,6 @@ export default class Users extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.string('gender', 20).notNullable()
-
       table.integer('name_id').unsigned().references('id').inTable('names').onDelete('CASCADE')
       table
         .integer('location_id')
@@ -45,9 +44,10 @@ export default class Users extends BaseSchema {
         .references('id')
         .inTable('pictures')
         .onDelete('CASCADE')
-
-      table.string('nat', 55).notNullable()
       table.string('password', 180).notNullable()
+      table.string('nat', 55).notNullable()
+      table.enum('status', ['trash ', 'published']).defaultTo('published')
+      table.string('imported_t', 255).notNullable()
       table.string('remember_me_token').nullable()
       table.timestamps(true, true)
     })
