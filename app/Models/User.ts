@@ -7,6 +7,18 @@ export default class User extends BaseModel {
   public id: number
 
   @column()
+  public playerId: string
+
+  @column()
+  public nickname: string
+
+  @column()
+  public avatarUrl: string
+
+  @column()
+  public score: number
+
+  @column()
   public name: string
 
   @column()

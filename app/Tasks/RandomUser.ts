@@ -1,11 +1,13 @@
 import Logger from '@ioc:Adonis/Core/Logger'
 import { BaseTask } from 'adonis5-scheduler/build'
-import Database from '@ioc:Adonis/Lucid/Database'
+
+import User from 'App/Models/User'
+
 const fetch = require('node-fetch')
 
 export default class TaskToCheckSomething extends BaseTask {
   public static get schedule() {
-    return '*/1 * * * * *'
+    return '*/70 * * * * *'
   }
 
   public static get useLock() {
@@ -13,39 +15,31 @@ export default class TaskToCheckSomething extends BaseTask {
   }
 
   public async handle() {
-    // const { default: User } = await import('App/Models/User')
-    // console.log('starting task to create a random users between 1 day')
-    // const amountOfUsers = Math.ceil(Math.random() * 10)
-    // fetch(`https://randomuser.me/api?results=${amountOfUsers}`)
-    //     .then((response) => response.json())
-    //     .then(async (userJsonResponse) => {
-    //       const { results } = userJsonResponse
+    const amountOfUsers = 200
 
-    //       const formattedUsers = results.map((user) => {
-    //         return {
-    //           playerId: user.login.username,
-    //           nickname: `${user.name.title} ${user.name.first} ${user.name.last}`,
-    //           avatarUrl: `${user.picture.thumbnail}`,
-    //           score: Math.ceil(Math.random() * 100),
-    //         }
-    //       })
-    //       console.log('New users list:', formattedUsers)
-    //       console.log(`Created ${amountOfUsers} new users and inserted them into the DB`)
+    for (let i = 0; i < 10; i++) {
+      fetch(`https://randomuser.me/api/?results=${amountOfUsers}&page=${i + 1}`)
+        .then((response) => response.json())
+        .then(async (userJsonResponse) => {
+          const { results } = userJsonResponse
+          const formattedUsers = results.map((user) => {
+            return {
+              playerId: user.login.username,
+              nickname: `${user.name.title} ${user.name.first} ${user.name.last}`,
+              avatarUrl: `${user.picture.thumbnail}`,
+              score: Math.ceil(Math.random() * 100),
+            }
+          })
+          console.log('New users list:', formattedUsers)
+          console.log(`Created ${amountOfUsers} new users and inserted them into the DB`)
+          await User.createMany(formattedUsers)
+        })
+        .catch((error) => console.error('error', error))
+      const ms = new Date().getTime()
+      Logger.info('handle start', ms)
 
-    //await User.createMany(formattedUsers)
-
-    // const axios = require('axios')
-
-    // await axios('https://randomuser.me/api/?results=2').then((response) => {
-    //   console.log(response)
-    //   return response
-    // })
-
-    // const users = await Database.query().from('users').select('*')
-
-    const ms = new Date().getTime()
-    Logger.info('handle start', ms)
-    await new Promise((resolve) => setTimeout(resolve, 3000))
-    Logger.info('handle end', ms)
+      await new Promise((resolve) => setTimeout(resolve, 3000))
+      Logger.info('handle end', ms)
+    }
   }
 }
