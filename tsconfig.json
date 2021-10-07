@@ -28,7 +28,8 @@
     "types": [
       "@adonisjs/core",
       "@adonisjs/repl",
-      "adonis5-scheduler"
+      "adonis5-scheduler",
+      "@adonisjs/lucid"
     ]
   }
 }
