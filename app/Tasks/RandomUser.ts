@@ -4,7 +4,7 @@ import Database from '@ioc:Adonis/Lucid/Database'
 
 export default class TaskToCheckSomething extends BaseTask {
   public static get schedule() {
-    return '*/10 * * * * *'
+    return '*/1 * * * * *'
   }
 
   public static get useLock() {
@@ -12,9 +12,17 @@ export default class TaskToCheckSomething extends BaseTask {
   }
 
   public async handle() {
-    const users = await Database.query().from('users').select('*')
+    const fetch = require('node-fetch')
 
-    console.log(users)
+    const url = 'https://randomuser.me/api/?results=5'
+
+    fetch(url)
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data) // object {text:"hello world"}
+      })
+
+    const users = await Database.query().from('users').select('*')
 
     const ms = new Date().getTime()
     Logger.info('handle start', ms)
