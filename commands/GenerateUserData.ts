@@ -23,7 +23,6 @@ export default class GenerateUserData extends BaseCommand {
         .then((response) => response.json())
         .then(async (userJsonResponse) => {
           const { results } = userJsonResponse
-          console.log(results)
 
           const formattedUsers = results.map((user) => {
             return {

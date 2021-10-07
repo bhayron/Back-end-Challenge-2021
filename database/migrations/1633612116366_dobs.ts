@@ -7,9 +7,9 @@ export default class Dobs extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.string('date', 255).notNullable()
+      table.string('age', 20).notNullable()
+
       table.timestamps(true, true)
     })
   }

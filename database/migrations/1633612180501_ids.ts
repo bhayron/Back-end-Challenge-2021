@@ -7,9 +7,8 @@ export default class Ids extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.string('name', 255).notNullable()
+      table.string('value', 20).notNullable()
       table.timestamps(true, true)
     })
   }

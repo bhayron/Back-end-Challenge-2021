@@ -13,27 +13,26 @@ export default class TaskToCheckSomething extends BaseTask {
   }
 
   public async handle() {
+    // const { default: User } = await import('App/Models/User')
+    // console.log('starting task to create a random users between 1 day')
+    // const amountOfUsers = Math.ceil(Math.random() * 10)
+    // fetch(`https://randomuser.me/api?results=${amountOfUsers}`)
+    //     .then((response) => response.json())
+    //     .then(async (userJsonResponse) => {
+    //       const { results } = userJsonResponse
 
-    const { default: User } = await import('App/Models/User')
-    console.log('starting task to create a random users between 1 day')
-    const amountOfUsers = Math.ceil(Math.random() * 10)
-    fetch(`https://randomuser.me/api?results=${amountOfUsers}`)
-        .then((response) => response.json())
-        .then(async (userJsonResponse) => {
-          const { results } = userJsonResponse
+    //       const formattedUsers = results.map((user) => {
+    //         return {
+    //           playerId: user.login.username,
+    //           nickname: `${user.name.title} ${user.name.first} ${user.name.last}`,
+    //           avatarUrl: `${user.picture.thumbnail}`,
+    //           score: Math.ceil(Math.random() * 100),
+    //         }
+    //       })
+    //       console.log('New users list:', formattedUsers)
+    //       console.log(`Created ${amountOfUsers} new users and inserted them into the DB`)
 
-          const formattedUsers = results.map((user) => {
-            return {
-              playerId: user.login.username,
-              nickname: `${user.name.title} ${user.name.first} ${user.name.last}`,
-              avatarUrl: `${user.picture.thumbnail}`,
-              score: Math.ceil(Math.random() * 100),
-            }
-          })
-          console.log('New users list:', formattedUsers)
-          console.log(`Created ${amountOfUsers} new users and inserted them into the DB`)
-
-          //await User.createMany(formattedUsers)
+    //await User.createMany(formattedUsers)
 
     // const axios = require('axios')
 

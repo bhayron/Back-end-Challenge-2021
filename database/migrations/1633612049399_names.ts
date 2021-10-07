@@ -6,10 +6,10 @@ export default class Names extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
+      table.string('title', 55).notNullable()
+      table.string('first', 55).notNullable()
+      table.string('last', 55).notNullable()
 
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
       table.timestamps(true, true)
     })
   }

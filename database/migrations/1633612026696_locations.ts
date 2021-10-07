@@ -7,9 +7,11 @@ export default class Locations extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.string('street', 55).notNullable()
+      table.string('city', 55).notNullable()
+      table.string('state', 55).notNullable()
+      table.string('postcode', 55).notNullable()
+      table.integer('cprdomate_id').unsigned().notNullable()
       table.timestamps(true, true)
     })
   }

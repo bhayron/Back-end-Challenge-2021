@@ -7,9 +7,13 @@ export default class Logins extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.string('uuid', 255).notNullable()
+      table.string('username', 255).notNullable()
+      table.string('password', 255).notNullable()
+      table.string('salt', 255).notNullable()
+      table.string('md5', 255).notNullable()
+      table.string('sha1', 255).notNullable()
+      table.string('sha256', 255).notNullable()
       table.timestamps(true, true)
     })
   }

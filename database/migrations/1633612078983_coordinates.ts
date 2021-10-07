@@ -7,9 +7,8 @@ export default class Coordinates extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.string('latitude', 255).notNullable()
+      table.string('longitude', 255).notNullable()
       table.timestamps(true, true)
     })
   }
