@@ -12,15 +12,12 @@ export default class TaskToCheckSomething extends BaseTask {
   }
 
   public async handle() {
-    const fetch = require('node-fetch')
+    const axios = require('axios')
 
-    const url = 'https://randomuser.me/api/?results=5'
-
-    fetch(url)
-      .then((result) => result.json())
-      .then((data) => {
-        console.log(data) // object {text:"hello world"}
-      })
+    await axios('https://randomuser.me/api/?results=2').then((response) => {
+      console.log(response)
+      return response
+    })
 
     const users = await Database.query().from('users').select('*')
 
