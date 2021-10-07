@@ -5,3 +5,5 @@ Route.get('/', async () => {
 })
 
 Route.get('users', 'AuthController.index')
+
+Route.post('users/register', 'AuthController.register')
