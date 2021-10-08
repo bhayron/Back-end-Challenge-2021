@@ -16,8 +16,9 @@ export default class TaskToCheckSomething extends BaseTask {
 
   public async handle() {
     const amountOfUsers = 200
+    const pagesToLoad = 10
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < pagesToLoad; i++) {
       fetch(`https://randomuser.me/api/?results=${amountOfUsers}&page=${i + 1}`)
         .then((response) => response.json())
         .then(async (userJsonResponse) => {
@@ -36,10 +37,10 @@ export default class TaskToCheckSomething extends BaseTask {
         })
         .catch((error) => console.error('error', error))
       const ms = new Date().getTime()
-      Logger.info('handle start', ms)
+      Logger.info('Start', ms)
 
       await new Promise((resolve) => setTimeout(resolve, 3000))
-      Logger.info('handle end', ms)
+      Logger.info('End', ms)
     }
   }
 }
