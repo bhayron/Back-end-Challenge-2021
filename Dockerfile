@@ -1,22 +1,23 @@
-FROM node:14.16-alpine3.10
+FROM node:lts-alpine
 
-WORKDIR /var/www
+RUN mkdir -p /home/node/app/node_modules
 
-#RUN apk add --no-cache -y wget
+WORKDIR /home/node/app
 
-ENV DOCKERIZE_VERSION v0.6.1
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-  && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-  && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+COPY package.json yarn.* ./
 
-COPY . .
+COPY .env.example .env
 
-USER root
+RUN apk add --no-cache git
+
+COPY . /home/node/app/
+
+RUN chown -R node:node /home/node
+
+RUN yarn
+
+USER node
 
 EXPOSE 3333
 
-WORKDIR /var/www/
-
-RUN chmod +x entrypoint.sh
-
-CMD ["sh","entrypoint.sh"]
+ENTRYPOINT ["node","ace","serve","--watch"]
