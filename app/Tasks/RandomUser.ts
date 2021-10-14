@@ -7,8 +7,8 @@ const fetch = require('node-fetch')
 
 export default class TaskToCheckSomething extends BaseTask {
   public static get schedule() {
-    return '*/70 * 3 * * *'
-    // return '*/70 * * * * *'
+    //return '*/70 * 3 * * *'
+    return '*/70 * * * * *'
   }
 
   public static get useLock() {
