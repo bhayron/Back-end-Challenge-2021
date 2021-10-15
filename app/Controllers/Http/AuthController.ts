@@ -7,13 +7,14 @@ import Database from '@ioc:Adonis/Lucid/Database'
 export default class AuthController {
   public async index({ request, response }: HttpContextContract) {
     const page = request.input('page', 1)
-    const perPage = request.input('per_page', 1)
+    const perPage = request.input('per_page', 5)
 
-    const users = (await Database.from('users').paginate(page, perPage)).toJSON()
+    const user = (await Database.from('users').paginate(page, perPage)).toJSON()
 
-    const dados = await users.data
+    const data = user.data
+    const meta = user.meta
 
-    dados.map((item) => {
+    const users = data.map((item) => {
       const {
         id,
         gender,
@@ -51,10 +52,9 @@ export default class AuthController {
         thumbnail,
         nat,
         status,
-        ...rest
       } = item
 
-      const resultados = {
+      const result = {
         gender,
         name: { title, first, last },
         location: {
@@ -95,14 +95,14 @@ export default class AuthController {
           medium,
           thumbnail,
         },
+        status,
         nat,
       }
 
-      console.log(resultados)
+      return result
     })
 
-    //return response.ok({ data: { user: users } })
-    return response.ok(users)
+    return response.json({ results: users, info: meta })
   }
   public async register({ request, auth, response }: HttpContextContract) {
     console.log(request)
