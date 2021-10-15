@@ -30,7 +30,8 @@
       "@adonisjs/repl",
       "adonis5-scheduler",
       "@adonisjs/lucid",
-      "@adonisjs/auth"
+      "@adonisjs/auth",
+      "adonis5-swagger"
     ]
   }
 }
