@@ -7,33 +7,95 @@ import Database from '@ioc:Adonis/Lucid/Database'
 export default class AuthController {
   public async index({ request, response }: HttpContextContract) {
     const page = request.input('page', 1)
-    const perPage = request.input('per_page', 10)
+    const perPage = request.input('per_page', 1)
 
     const users = (await Database.from('users').paginate(page, perPage)).toJSON()
 
-    const dados = users.data
+    const dados = await users.data
 
     dados.map((item) => {
       const {
         id,
-        player_id,
-        nickname,
-        avatar_url,
-        score,
+        gender,
+        title,
+        first,
+        last,
+        number,
+        name_loc,
+        city,
+        state,
+        country,
+        postcode,
+        latitude,
+        longitude,
+        offset,
+        description,
+        email,
+        uuid,
+        username,
+        password,
+        salt,
+        md5,
+        sha1,
+        sha256,
+        date_dob,
+        age_dob,
+        date_reg,
+        age_reg,
+        phone,
+        cell,
+        name,
+        value,
+        large,
+        medium,
+        thumbnail,
+        nat,
         status,
-        imported_t,
-        created_at,
-        updated_at,
-        ...data
+        ...rest
       } = item
+
       const resultados = {
-        id,
-        player_id,
-        nickname,
-        avatar_url,
-        name: { player_id, nickname },
-        score,
-        date: { imported_t, created_at, updated_at, teste: { nickname } },
+        gender,
+        name: { title, first, last },
+        location: {
+          street: { number, name_loc },
+          city,
+          state,
+          country,
+          postcode,
+          coordinates: { latitude, longitude },
+          timezone: { offset, description },
+        },
+        email,
+        login: {
+          uuid,
+          username,
+          password,
+          salt,
+          md5,
+          sha1,
+          sha256,
+        },
+        dob: {
+          date_dob,
+          age_dob,
+        },
+        registered: {
+          date_reg,
+          age_reg,
+        },
+        phone,
+        cell,
+        id: {
+          name,
+          value,
+        },
+        picture: {
+          large,
+          medium,
+          thumbnail,
+        },
+        nat,
       }
 
       console.log(resultados)

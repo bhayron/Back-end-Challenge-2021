@@ -1,5 +1,5 @@
 import Hash from '@ioc:Adonis/Core/Hash'
-import { BaseModel, beforeSave, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, beforeSave, column } from '@ioc:Adonis/Lucid/Orm'
 import { DateTime } from 'luxon'
 
 export default class User extends BaseModel {
@@ -19,7 +19,10 @@ export default class User extends BaseModel {
   public last: string
   //location
   @column()
-  public street: string
+  public number: string
+
+  @column()
+  public nameLoc: string
 
   @column()
   public city: string
@@ -28,7 +31,11 @@ export default class User extends BaseModel {
   public state: string
 
   @column()
+  public country: string
+
+  @column()
   public postcode: string
+
   //coordinates
   @column()
   public latitude: string
@@ -67,10 +74,16 @@ export default class User extends BaseModel {
   public sha256: string
   //dob
   @column()
-  public date: DateTime
+  public dateDob: string
 
   @column()
-  public age: string
+  public ageDob: string
+  //registered
+  @column()
+  public dateReg: string
+
+  @column()
+  public ageReg: string
   //
   @column()
   public phone: string
@@ -92,6 +105,9 @@ export default class User extends BaseModel {
 
   @column()
   public thumbnail: string
+
+  @column()
+  public nat: string
 
   @column()
   public status: string
