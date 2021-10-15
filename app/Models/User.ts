@@ -7,31 +7,100 @@ export default class User extends BaseModel {
   public id: number
 
   @column()
-  public playerId: string
+  public gender: string
+  //name
+  @column()
+  public title: string
 
   @column()
-  public nickname: string
+  public first: string
 
   @column()
-  public avatarUrl: string
+  public last: string
+  //location
+  @column()
+  public street: string
 
   @column()
-  public score: number
+  public city: string
 
   @column()
-  public name: string
+  public state: string
 
+  @column()
+  public postcode: string
+  //coordinates
+  @column()
+  public latitude: string
+
+  @column()
+  public longitude: string
+  //timezone
+  @column()
+  public offset: string
+
+  @column()
+  public description: string
+  //login
   @column()
   public email: string
+  //
+  @column()
+  public uuid: string
+
+  @column()
+  public username: string
 
   @column({ serializeAs: null })
   public password: string
 
   @column()
+  public salt: string
+
+  @column()
+  public md5: string
+
+  @column()
+  public sha1: string
+
+  @column()
+  public sha256: string
+  //dob
+  @column()
+  public date: DateTime
+
+  @column()
+  public age: string
+  //
+  @column()
+  public phone: string
+
+  @column()
+  public cell: string
+
+  @column()
+  public name: string
+
+  @column()
+  public value: string
+  //picture
+  @column()
+  public large: string
+
+  @column()
+  public medium: string
+
+  @column()
+  public thumbnail: string
+
+  @column()
+  public status: string
+
+  @column()
   public rememberMeToken?: string
 
   @column.dateTime({ autoCreate: true })
-  public importedT: DateTime
+  public importedAt: DateTime
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

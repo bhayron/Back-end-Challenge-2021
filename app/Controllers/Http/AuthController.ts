@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import RegisterValidator from 'App/Validators/RegisterValidator'
@@ -6,7 +7,7 @@ import Database from '@ioc:Adonis/Lucid/Database'
 export default class AuthController {
   public async index({ request, response }: HttpContextContract) {
     const page = request.input('page', 1)
-    const perPage = request.input('per_page', 5)
+    const perPage = request.input('per_page', 10)
 
     const users = (await Database.from('users').paginate(page, perPage)).toJSON()
 
@@ -32,7 +33,7 @@ export default class AuthController {
         avatar_url,
         name: { player_id, nickname },
         score,
-        date: { imported_t, created_at, updated_at },
+        date: { imported_t, created_at, updated_at, teste: { nickname } },
       }
 
       console.log(resultados)
