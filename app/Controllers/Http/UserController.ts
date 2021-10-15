@@ -230,6 +230,6 @@ export default class UserController {
 
     await user.delete()
 
-    return response.json({ message: 'User Deleted.' })
+    return response.status(201).json({ message: 'User deleted with success' })
   }
 }
