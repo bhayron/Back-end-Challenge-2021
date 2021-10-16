@@ -1,4 +1,4 @@
-/login:
+/users/login:
   post:
     tags:
       - Auth
@@ -12,11 +12,11 @@
             properties:
               email:
                 type: string
-                example: 'johndoe@example.com'
+                example: 'bhayron@mail.com'
                 required: true
               password:
                 type: string
-                example: 'secret'
+                example: '12345678'
                 required: true
     produces:
       - application/json

@@ -1,0 +1,25 @@
+/users/show/{id}:
+  get:
+    tags:
+      - Get User
+    security:
+      - BearerAuth: []
+    description: Get User by id
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+          example: 1
+        required: true
+        description: ID user for search
+
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Sucess
+      401:
+        description: UnauthorizedError
+      422:
+        description: Invalid

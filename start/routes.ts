@@ -18,6 +18,5 @@ Route.group(() => {
   Route.delete('users/delete/:id', 'UserController.delete').middleware('auth')
 })
 
-//Swagger
 
-Route.get('/api/hello', 'TestController.hello')
+

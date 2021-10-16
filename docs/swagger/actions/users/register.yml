@@ -1,7 +1,7 @@
-/users:
+/users/register:
   post:
     tags:
-      - Users
+      - Register User
     security:
       - BearerAuth: []
     description: Criar usuário
@@ -11,21 +11,30 @@
         application/json:
           schema:
             properties:
-              name:
+              gener:
                 type: string
-                example: 'John Doe'
+                example: 'male'
+                required: true
+              title:
+                type: string
+                example: 'Mr'
+                required: true
+              first:
+                type: string
+                example: 'Bhayron'
+                required: true
+              last:
+                type: string
+                example: 'Klivila'
                 required: true
               email:
                 type: string
-                example: 'johndoe@example.com'
+                example: 'bhayron@mail.com'
                 required: true
+
               password:
                 type: string
-                example: 'secret'
-                required: true
-              password_confirmation:
-                type: string
-                example: 'secret'
+                example: '12345678'
                 required: true
     produces:
       - application/json
