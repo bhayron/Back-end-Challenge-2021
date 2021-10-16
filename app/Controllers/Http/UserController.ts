@@ -111,7 +111,7 @@ export default class UserController {
 
     const token = await auth.login(user)
 
-    return response.ok({ data: token })
+    return response.status(201).json({ data: token })
   }
 
   public async login({ request, auth, response }: HttpContextContract) {
@@ -230,6 +230,6 @@ export default class UserController {
 
     await user.delete()
 
-    return response.status(201).json({ message: 'User deleted with success' })
+    return response.status(200).json({ message: 'User deleted with success' })
   }
 }
