@@ -15,5 +15,5 @@ Route.group(() => {
 
   Route.patch('users/update/:id', 'UserController.update').middleware('auth')
 
-  Route.delete('users/:id', 'UserController.delete').middleware('auth')
+  Route.delete('users/delete/:id', 'UserController.delete').middleware('auth')
 })

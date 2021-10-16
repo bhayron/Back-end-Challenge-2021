@@ -39,7 +39,7 @@ export default class RegisterValidator {
     medium: schema.string(),
     thumbnail: schema.string(),
     nat: schema.string(),
-    status: schema.string(),
+    status: schema.string.optional(),
   })
 
   public messages = {}
