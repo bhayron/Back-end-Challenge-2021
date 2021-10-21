@@ -1,10 +1,19 @@
-/users/register:
-  post:
+/users/update/{id}:
+  patch:
     tags:
-      - Register User
+      - Update User
     security:
       - BearerAuth: []
-    description: Criar usuário
+    description: Update User by id
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+          example: 1
+        required: true
+        description: ID user for search
+
     requestBody:
       required: true
       content:
@@ -27,19 +36,17 @@
                 type: string
                 example: 'Klivila'
                 required: true
-              email:
-                type: string
-                example: 'bhayron@mail.com'
-                required: true
-
               password:
                 type: string
                 example: '12345678'
                 required: true
+
+
+
     produces:
       - application/json
     responses:
-      201:
+      200:
         description: Sucess
       401:
         description: UnauthorizedError
