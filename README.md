@@ -1,5 +1,16 @@
 ## Coodesh REST Back-end Challenge 2021
 
+- [Ferramentas Utilizadas](#ferramentas-utilizadas)
+- [Instalação](#instalacao)
+- [Arquivo de configuração](#arquivo-de-configuracao)
+- [Executar a aplicação com Docker](#executar-a-aplicacao-com-docker)
+- [Executar teste da API](#executar-teste-da-api)
+- [Criar as tabelas do banco de dados](#criar-tabelas-do-banco-de-dados)
+- [Executar CRON JOB](#executar-cron-job)
+- [Executar a aplicação em ambiente de desenvolvimento](#executar-a-aplicacao-em-ambiente-de-desenvolvimento)
+- [Acesso ao projeto](#acesso-ao-projeto)
+- [Acesso a documentação (SWAGGER)](#acesso-a-documentacao)
+
 Código criado para o desafio relacionado à vaga de Backend NodeJS na Coodesh.
 
 Repositório do Desafio: [https://github.com/bhayron/Back-end-Challenge-2021](https://github.com/bhayron/Back-end-Challenge-2021)
@@ -24,9 +35,8 @@ Projeto realizado por Bhayron Klivilan [bhayronklivilan@gmail.com](mailto:bhayro
 Executar o comando para instalar as dependências:
 
 ```
-$ yarn
-# ou
-$ npm install
+ yarn
+
 ```
 
 ## Arquivo de configuração
@@ -37,7 +47,7 @@ Criar um arquivo `.env` baseado no arquivo `.env.example`, editando os valores q
 
 Executar o comando:
 
-`$ docker-compose up `
+`docker-compose up`
 
 OBS: esse comando inicializará a aplicação
 
@@ -46,7 +56,7 @@ OBS: esse comando inicializará a aplicação
 Para testar a API , execute:
 
 ```
-$ yarn test
+ yarn test
 ```
 
 ## Criar as tabelas do banco de dados
@@ -54,7 +64,7 @@ $ yarn test
 Para executar as migrations:
 
 ```
-$ node ace migration:run
+ node ace migration:run
 ```
 
 ## Executar CRON JOB
@@ -62,7 +72,15 @@ $ node ace migration:run
 Para importar os dados para a Base de Dados com a versão mais recente do [Random User](https://randomuser.me/documentation#format) :
 
 ```
-$ node ace scheduler:run
+ node ace scheduler:run
+```
+
+## Executar a aplicação em ambiente de desenvolvimento
+
+Para executar:
+
+```
+ yarn dev
 ```
 
 ## Acesso ao projeto
