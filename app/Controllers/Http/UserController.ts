@@ -9,8 +9,13 @@ export default class UserController {
   public async index({ request, response }: HttpContextContract) {
     const page = request.input('page', 1)
     const perPage = request.input('per_page', 5)
+    const name = request.input('name')
 
-    const user = (await Database.from('users').paginate(page, perPage)).toJSON()
+    const user = (
+      name
+        ? await Database.from('users').where('users.first', name).paginate(page, perPage)
+        : await Database.from('users').paginate(page, perPage)
+    ).toJSON()
 
     const data = user.data
     const meta = user.meta

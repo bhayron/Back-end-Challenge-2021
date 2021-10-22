@@ -13,6 +13,8 @@ Route.group(() => {
 
   Route.get('users/show/:id', 'UserController.show').middleware('auth')
 
+  Route.get('users/search/', 'UserController.search').middleware('auth')
+
   Route.patch('users/update/:id', 'UserController.update').middleware('auth')
 
   Route.delete('users/delete/:id', 'UserController.delete').middleware('auth')
