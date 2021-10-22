@@ -5,7 +5,7 @@ export default class SortValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    sort_by: schema.enum.optional(['id', 'gener', 'email', 'title']),
+    sort_by: schema.enum.optional(['id', 'gener', 'email', 'title', 'first']),
     order: schema.enum.optional(['asc', 'desc'] as const),
   })
 
