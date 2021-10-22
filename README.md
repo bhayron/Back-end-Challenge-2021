@@ -11,7 +11,7 @@ Menu:
 - [Executar CRON JOB](#executar-cron-job)
 - [Executar a aplicação em ambiente de desenvolvimento](#executar-a-aplicação-em-ambiente-de-desenvolvimento)
 - [Acesso ao projeto](#acesso-ao-projeto)
-- [Acesso a documentação (SWAGGER)](#acesso-a-documentação)
+- [Acesso a documentação (SWAGGER)](#acesso-a-documentação-swagger)
 
 Código criado para o desafio relacionado à vaga de Backend NodeJS na Coodesh.
 
