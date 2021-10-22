@@ -1,0 +1,25 @@
+/users/?name={name}:
+  get:
+    tags:
+      - Search User
+    security:
+      - BearerAuth: []
+    description: Search User by name
+    parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+          example: bhayron
+        required: true
+        description: Name user for search
+
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Sucess
+      401:
+        description: UnauthorizedError
+      422:
+        description: Invalid
