@@ -7,7 +7,7 @@ Menu:
 - [Arquivo de configuração](#arquivo-de-configuração)
 - [Executar a aplicação com Docker](#executar-a-aplicação-com-docker)
 - [Executar teste da API](#executar-teste-da-api)
-- [Criar as tabelas do banco de dados](#criar-tabelas-do-banco-de-dados)
+- [Criar as tabelas do banco de dados](#criar-as-tabelas-do-banco-de-dados)
 - [Executar CRON JOB](#executar-cron-job)
 - [Executar a aplicação em ambiente de desenvolvimento](#executar-a-aplicação-em-ambiente-de-desenvolvimento)
 - [Acesso ao projeto](#acesso-ao-projeto)
