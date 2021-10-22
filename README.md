@@ -1,5 +1,10 @@
 ## Coodesh REST Back-end Challenge 2021
 
+Código criado para o desafio relacionado à vaga de Backend NodeJS na Coodesh.
+
+Repositório do Desafio: [https://github.com/bhayron/Back-end-Challenge-2021](https://github.com/bhayron/Back-end-Challenge-2021)
+
+Projeto realizado por Bhayron Klivilan [bhayronklivilan@gmail.com](mailto:bhayronklivilan@gmail.com)
 Menu:
 
 - [Ferramentas Utilizadas](#ferramentas-utilizadas)
@@ -12,12 +17,6 @@ Menu:
 - [Executar a aplicação em ambiente de desenvolvimento](#executar-a-aplicação-em-ambiente-de-desenvolvimento)
 - [Acesso ao projeto](#acesso-ao-projeto)
 - [Acesso a documentação (SWAGGER)](#acesso-a-documentação-swagger)
-
-Código criado para o desafio relacionado à vaga de Backend NodeJS na Coodesh.
-
-Repositório do Desafio: [https://github.com/bhayron/Back-end-Challenge-2021](https://github.com/bhayron/Back-end-Challenge-2021)
-
-Projeto realizado por Bhayron Klivilan [bhayronklivilan@gmail.com](mailto:bhayronklivilan@gmail.com)
 
 <img  src="readme.png"  alt="readme image">
 
