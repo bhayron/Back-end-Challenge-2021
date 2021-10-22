@@ -38,7 +38,6 @@ Executar o comando para instalar as dependências:
 
 ```
  yarn
-
 ```
 
 ## Arquivo de configuração

@@ -57,6 +57,7 @@ export default class UserController {
         thumbnail,
         nat,
         status,
+        imported_at,
       } = item
 
       const result = {
@@ -100,8 +101,9 @@ export default class UserController {
           medium,
           thumbnail,
         },
-        status,
         nat,
+        status,
+        imported_at,
       }
 
       return result
@@ -171,6 +173,7 @@ export default class UserController {
       thumbnail,
       nat,
       status,
+      imported_at,
     } = data
 
     const result = {
@@ -214,8 +217,9 @@ export default class UserController {
         medium,
         thumbnail,
       },
-      status,
       nat,
+      status,
+      imported_at,
     }
 
     return response.json(result)
