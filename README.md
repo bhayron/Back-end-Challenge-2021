@@ -47,7 +47,7 @@ Criar um arquivo `.env` baseado no arquivo `.env.example`, editando os valores q
 
 Executar o comando:
 
-`docker-compose up`
+`docker-compose up -d`
 
 OBS: esse comando inicializará a aplicação
 
