@@ -1,15 +1,15 @@
 ## Coodesh REST Back-end Challenge 2021
 
 - [Ferramentas Utilizadas](#ferramentas-utilizadas)
-- [Instalação](#instalacao)
-- [Arquivo de configuração](#arquivo-de-configuracao)
-- [Executar a aplicação com Docker](#executar-a-aplicacao-com-docker)
+- [Instalação](#instalação)
+- [Arquivo de configuração](#arquivo-de-configuração)
+- [Executar a aplicação com Docker](#executar-a-aplicação-com-docker)
 - [Executar teste da API](#executar-teste-da-api)
 - [Criar as tabelas do banco de dados](#criar-tabelas-do-banco-de-dados)
 - [Executar CRON JOB](#executar-cron-job)
-- [Executar a aplicação em ambiente de desenvolvimento](#executar-a-aplicacao-em-ambiente-de-desenvolvimento)
+- [Executar a aplicação em ambiente de desenvolvimento](#executar-a-aplicação-em-ambiente-de-desenvolvimento)
 - [Acesso ao projeto](#acesso-ao-projeto)
-- [Acesso a documentação (SWAGGER)](#acesso-a-documentacao)
+- [Acesso a documentação (SWAGGER)](#acesso-a-documentação)
 
 Código criado para o desafio relacionado à vaga de Backend NodeJS na Coodesh.
 
