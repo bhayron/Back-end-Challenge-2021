@@ -24,3 +24,9 @@ services:
       MYSQL_USER: code
       MYSQL_PASSWORD: secret
       MYSQL_DATABASE: coodesh
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
